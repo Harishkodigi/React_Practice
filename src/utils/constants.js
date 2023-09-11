@@ -1,0 +1,2 @@
+export const LOGO_URL = "https://img.freepik.com/free-vector/detailed-chef-logo-template_23-2148987940.jpg?w=740&t=st=1694161335~exp=1694161935~hmac=68b47429a6bcd85f7c87f72b17bf339ca17bd33282f33630ba909b1d86676212"
+export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/"
