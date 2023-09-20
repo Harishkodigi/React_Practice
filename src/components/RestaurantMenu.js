@@ -7,13 +7,11 @@ import { MENU_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
 
-   
+    const [resInfo, setResInfo] = useState(null)
     const { resId } = useParams();
 
 
-    const { name, cuisines, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
 
-    const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
     useEffect(() => {
         fetchMenu();
@@ -28,11 +26,13 @@ const RestaurantMenu = () => {
     }
 
     if (resInfo === null) return <Shimmer />;
-    
 
-    console.log(itemCards);
+    const { name, cuisines, costForTwoMessage } = resInfo?.cards[0]?.card?.card?.info;
 
-    const [resInfo, setResInfo] = useState(resInfo)
+    // const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    // console.log(itemCards);
+
+
 
 
     return (
