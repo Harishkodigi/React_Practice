@@ -9,34 +9,39 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-50 shadow-lg mb-2">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} alt="logo" />
+        <img className="w-24" src={LOGO_URL} alt="logo" />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>OnlineStaus : {onlineStatus ? "🔵" :"🔴 "} </li>
-          <li>
+      <div className="flex text-center ">
+        <ul className="flex p-4 m-4 ">
+          <li className="px-4 hover:font-bold bg-slate-100">OnlineStaus : {onlineStatus ? "🔵" : "🔴 "} </li>
+          <li className="px-4 hover:font-bold bg-slate-100">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="px-4 hover:font-bold bg-slate-100">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="px-4 hover:font-bold bg-slate-100">
             <Link to="/contact">Contact us</Link>
           </li>
-          <li>
+          <li className="px-4 hover:font-bold bg-slate-100">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li>Cart</li>
-          <button
-            className="login"
-            onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
-          >
-            {btnName}
-          </button>
+          <li className="px-4 hover:font-bold bg-slate-100">Cart</li>
+          <li>
+            {" "}
+            <button
+              className="px-4 hover:font-bold bg-slate-100 "
+              onClick={() => {
+                btnName === "Login"
+                  ? setBtnName("Logout")
+                  : setBtnName("Login");
+              }}
+            >
+              {btnName}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

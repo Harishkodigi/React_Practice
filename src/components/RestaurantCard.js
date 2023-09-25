@@ -5,10 +5,11 @@ const RestaurantCard = (props) => {
     const { cloudinaryImageId, name, cuisines, avgRating, costForTwo } = resdata?.info
     const { deliveryTime } = resdata.info.sla
     return (
-        <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-            <img className="res-img" src={CDN_URL + cloudinaryImageId} alt="res-img" />
-            <h4>{name}</h4>
-            <h6>{cuisines.join(',')}</h6>
+        <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-300" >
+            <img className="rounded-xl" src={CDN_URL + cloudinaryImageId} alt="res-img" />
+
+            <h4 className="font-bold py-2 text-lg">{name}</h4>
+            <h6 className="overflow-clip">{cuisines.join(',')}</h6>
             <h6>{avgRating} Star</h6>
             <h6>{costForTwo}</h6>
             <h6>{deliveryTime} mnts</h6>
