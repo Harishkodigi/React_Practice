@@ -30,7 +30,7 @@ const Body = () => {
 
   if (onlineStatus === false)
     return (
-      <h1> Your Offline !! Please Check your Internet Connection Once !</h1>
+      <h1> Your Offline !! Please Check your Internet Connection Once ! ⚠ </h1>
     );
 
   return restaurantList.length === 0 ? (

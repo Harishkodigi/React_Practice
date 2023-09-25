@@ -15,17 +15,18 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>OnlineStaus : {onlineStatus ? "true": "false"}</li>
+          <li>OnlineStaus : {onlineStatus ? "🔵" :"🔴 "} </li>
           <li>
-            {" "}
             <Link to="/">Home</Link>
           </li>
           <li>
-            {" "}
             <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/contact">Contact us</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <li>Cart</li>
           <button
