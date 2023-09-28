@@ -10,7 +10,6 @@ const Body = () => {
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log(restaurantList);
 
   const PromotedRestaurant = withPromotedLable(RestaurantCard);
 
@@ -83,7 +82,7 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
           >
-            {restaurant.info.avgRatingString < 4.2 ? (
+            {restaurant.info.avgRatingString <= 4.2 ? (
               <PromotedRestaurant resdata={restaurant} />
             ) : (
               <RestaurantCard resdata={restaurant} />
