@@ -1,15 +1,16 @@
 import RestaurantCard, { withPromotedLable } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { API_URL } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-
+  const { setUserName, loggedInUser } = useContext(UserContext);
 
   const PromotedRestaurant = withPromotedLable(RestaurantCard);
 
@@ -39,17 +40,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter flex">
-        <div className="search m-4 p-4 rounded-lg">
+      <div className="p-4 m-4 flex content-center">
+        <div className="p-4 m-2 ">
           <input
             type="text"
-            className="border border-solid  border-black text-center"
+            className="border border-solid  border-black text-center p-1"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
-
+        </div>
+        <div className="m-2 ">
           <button
             className="px-4 py-2 m-4 bg-green-100  hover:bg-blue-50 rounded-lg"
             onClick={() => {
@@ -61,7 +63,9 @@ const Body = () => {
           >
             search
           </button>
+        </div>
 
+        <div className="p-4 m-2 ">
           <button
             className="px-4 py-2 bg-gray-100 hover:bg-blue-100 rounded-lg"
             onClick={() => {
@@ -74,6 +78,16 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+
+        <div className="p-4 m-3 ">
+          <lable>User: </lable>
+          <input
+            type="text"
+            className="border border-solid  border-black text-center"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
         </div>
       </div>
       <div className="flex flex-wrap">

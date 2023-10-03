@@ -2,6 +2,10 @@ import { CDN_URL } from "../utils/constants";
 
 const ItemList = ({ items }) => {
   console.log(items);
+
+  const hadleAddItem = () => {
+    alert("Clicked Add Button");
+  };
   return (
     <div>
       {items.map((item) => (
@@ -17,7 +21,10 @@ const ItemList = ({ items }) => {
             <p className="text-xs"> {item.card.info.description}</p>
           </div>
           <div className="w-3/12 p-4">
-            <button className="absolute text-black rounded-md p-1 bg-white font-bold">
+            <button
+              className="absolute text-black rounded-md p-1 bg-white font-bold"
+              onClick={hadleAddItem}
+            >
               Add +
             </button>
             <img

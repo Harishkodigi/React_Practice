@@ -1,16 +1,17 @@
-
+import UserContext from "../utils/UserContext";
 import User from "./User";
 import UserClass from "./UserClass";
+import { useContext } from "react";
 
 const About = () => {
-    return(
-        <div>
-            <h1>About</h1>
-            <h2>This is a about Page </h2>
-            <User name="Harish Kumar" Location="Muttala" Contact=" @HarishKodigi"/>
-            <UserClass name="Harish Kumar" Location="Muttala" Contact=" @Harish" />
-        </div>
-    )
+  const { loggedInUser } = useContext(UserContext);
+  return (
+    <div>
+      <h1>About</h1>
+      <h2>This is a about Page </h2>
+      <User name={loggedInUser} Location="Muttala" Contact=" @HarishKodigi" />
+    </div>
+  );
 };
 
 export default About;
