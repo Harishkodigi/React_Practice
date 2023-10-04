@@ -81,10 +81,10 @@ const Body = () => {
         </div>
 
         <div className="p-4 m-3 ">
-          <lable>User: </lable>
+          <lable>User:  </lable>
           <input
             type="text"
-            className="border border-solid  border-black text-center"
+            className="border border-solid  border-black text-center p-1"
             value={loggedInUser}
             onChange={(e) => setUserName(e.target.value)}
           />
