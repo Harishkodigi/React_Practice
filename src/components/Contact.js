@@ -1,13 +1,30 @@
 const Contact = () => {
-    return (
+  return (
+    <div className="m-6 p-6  text-center">
+      <h1 className="font-bold text-2xl ">Contact Us</h1>
+      <form>
         <div>
-            <h1>Contact Us</h1>
-            <h2>Harish Kumar Kodigi </h2>
-            <h3>Address : 2/216 , Atmakur Mandal , Anantapur District , Pincode : 515751</h3>
-            <h3>Contact Number : 9542552994 </h3>
-            <h4>Email:harishkumar.kodigi@gmail.com</h4>
+          <input
+            type="text"
+            className="border border-black p-2 m-2 text-center rounded-sm"
+            placeholder="Name"
+          />
         </div>
-    )
+        <div>
+          <input
+            type="text"
+            className="border border-black p-2 m-2 text-center rounded-sm"
+            placeholder="Message"
+          />
+        </div>
+        <div>
+          <button className="border border-black rounded-lg bg-gray-400 p-2 m-2">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default Contact;
